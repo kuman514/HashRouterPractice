@@ -1,5 +1,6 @@
 function onRouteChanged() {
-  console.log(window.location.hash);
+  const hashSplit = window.location.hash.split('#');
+  console.log(hashSplit[hashSplit.length - 1]);
 }
 
 window.addEventListener("hashchange", onRouteChanged);

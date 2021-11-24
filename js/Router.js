@@ -1,4 +1,5 @@
 const routes = {
+  '': 'home',
   '/': 'home',
   '/about': 'about',
   '/error': 'error'
@@ -19,7 +20,8 @@ function setHashChange(onRouteChanged) {
   }
 
   window.addEventListener('hashchange', () => {
-    const hashName = window.location.hash.split('#')[1];
+    const hashSplit = window.location.hash.split('#');
+    const hashName = hashSplit[hashSplit.length - 1];
     onRouteChanged(convertRouteToComponentName(hashName));
   });
 }
