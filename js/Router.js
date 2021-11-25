@@ -24,6 +24,10 @@ function setHashChange(onRouteChanged) {
     const hashName = hashSplit[hashSplit.length - 1];
     onRouteChanged(convertRouteToComponentName(hashName));
   });
+  
+  const hashSplit = window.location.hash.split('#');
+  const hashName = hashSplit[hashSplit.length - 1];
+  onRouteChanged(convertRouteToComponentName(hashName));
 }
 
 export default setHashChange;
