@@ -20,6 +20,8 @@ class App extends Component {
     };
 
     setHashChange(this.onRouteChanged);
+
+    document.querySelector('main').appendChild(this.rootElement);
     
     this.render = () => {
       this.rootElement.textContent = 'Default Render';
